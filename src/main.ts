@@ -1,14 +1,10 @@
-import Vue, { h } from "vue";
+import { createApp } from "vue";
 import App from "./app.vue";
 
 import { VueQueryPlugin } from '@tanstack/vue-query'
 
-const app = new Vue({
-  render(h) {
-    return h(App);
-  },
-});
+const app = createApp(App);
 
-Vue.use(VueQueryPlugin)
+app.use(VueQueryPlugin)
 
-app.$mount("#app");
+app.mount("#app");
